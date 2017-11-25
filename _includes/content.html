@@ -18,8 +18,8 @@
                     {% endif %}
                 </div>
 
+                {% if about %}
                 <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-8-tablet" id="right-card">
-                    {% if about %}
                     <div class="mdc-card">
                         <div class="mdc-card__horizontal-block">
                             <section class="mdc-card__primary">
@@ -39,8 +39,8 @@
                             {% endfor %}
                          </section>
                     </div>
-                    {% endif %}
                 </div>
+                {% endif %}
             </ul>
         </div>
     </div>
