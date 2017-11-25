@@ -3,7 +3,7 @@
     <nav class="mdc-{{ site.data.drawer.type }}-drawer__drawer">
         <header class="mdc-{{ site.data.drawer.type }}-drawer__header">
             <div class="mdc-{{ site.data.drawer.type }}-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary">
-                {{ site.data.drawer.title }}
+                {{ site.data.drawer.title| default: site.title  }}
             </div>
         </header>
         <nav class="mdc-{{ site.data.drawer.type }}-drawer__content mdc-list-group">
