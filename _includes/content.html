@@ -4,7 +4,7 @@
         <div class="mdc-layout-grid" id="main-class">
             <div class="mdc-layout-grid__inner">
                 {% assign about = site.data.about %}
-                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-{% if about %}8{% else %}12{% endif%}" id="main-card">
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-{% if about %}8{% else %}12{% endif %}" id="main-card">
                     {% if page.card == false %}
                         {{ content }}
                         {% else %}
@@ -28,14 +28,14 @@
                                     {{ about.sub }}
                                 </h2>
                             </section>
-                            {% if about.img %}<img class="mdc-card__media-item" src="{{ about.img }}">{% endif %}
+                            {% if about.img %}<img class="mdc-card__media-item" src="{{ about.img | relative_url }}">{% endif %}
                         </div>
                         <section class="mdc-card__supporting-text">
                             {{ about.support }}
                         </section>
                         <section class="mdc-card__actions">
                             {% for button in about.button %}
-                            <a href="{{ button.url | relative_url  }}"><button class="mdc-button mdc-button--compact mdc-card__action">{{ button.title }}</button></a>
+                            <a href="{{ button.url | relative_url }}"><button class="mdc-button mdc-button--compact mdc-card__action">{{ button.title }}</button></a>
                             {% endfor %}
                          </section>
                     </div>
