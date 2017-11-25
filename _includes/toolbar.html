@@ -3,14 +3,14 @@
         <div class="mdc-toolbar__row">
             <div class="mdc-toolbar__section mdc-toolbar__section--shrink-to-fit mdc-toolbar__section--align-start">
                 {% if site.data.drawer %}<a href="#" class="menu-button material-icons mdc-toolbar__menu-icon">menu</a>{% endif %}
-                <span class="mdc-toolbar__title"><a href="{{ site.url }}">{{ site.data.toolbar.title | default: site.data }}</a></span>
+                <span class="mdc-toolbar__title"><a href="{{ site.url | relative_url }}">{{ site.data.toolbar.title | default: site.data }}</a></span>
             </div>
             <div class="mdc-toolbar__section mdc-toolbar__section--align-end">
                 <div>
                     <nav id="toolbar-tab-bar" class="mdc-tab-bar">
                         {% for toolbar in site.data.toolbar.subpages %}
                             {% if toolbar.url %}
-                                <a class="mdc-tab{% if page.url == toolbar.url %} mdc-tab--active{% endif %}" href="{{ toolbar.url }}">{{ toolbar.title }}</a>
+                                <a class="mdc-tab{% if page.url == toolbar.url %} mdc-tab--active{% endif %}" href="{{ toolbar.url | relative_url }}">{{ toolbar.title }}</a>
                                 {% if page.url == toolbar.url %}
                                     <span class="mdc-tab-bar__indicator"></span>
                                 {% endif %}

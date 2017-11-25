@@ -10,7 +10,7 @@
             <div class="mdc-list">
                 {% for drawer in site.data.drawer.subpages %}
                 {% if drawer.url %}
-                <a class="mdc-list-item{% if page.url == drawer.url %} mdc-{{ site.data.drawer.type }}-drawer--selected{% endif %}" href="{{ drawer.url }}">
+                <a class="mdc-list-item{% if page.url == drawer.url %} mdc-{{ site.data.drawer.type }}-drawer--selected{% endif %}" href="{{ drawer.url | relative_url }}">
                     {% if drawer.icon %}
                     <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">{{ drawer.icon }}</i>{% endif %}{{ drawer.title }}
                 </a>

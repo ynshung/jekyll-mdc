@@ -35,7 +35,7 @@
                         </section>
                         <section class="mdc-card__actions">
                             {% for button in about.button %}
-                            <a href="{{ button.url }}"><button class="mdc-button mdc-button--compact mdc-card__action">{{ button.title }}</button></a>
+                            <a href="{{ button.url | relative_url  }}"><button class="mdc-button mdc-button--compact mdc-card__action">{{ button.title }}</button></a>
                             {% endfor %}
                          </section>
                     </div>
