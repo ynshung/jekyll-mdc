@@ -1,0 +1,5 @@
+title: Jekyll-mdc
+description: Jekyll-mdc is a material design template.
+themecolor:
+rtl: 
+exclude: ["README.md", ".gitignore", "LICENSE", "todo.md"]

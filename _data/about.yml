@@ -1,0 +1,10 @@
+title: 
+img: /assets/img/jekyll-logo.png
+imgsize: 30px
+sub: Material-themed Jekyll
+support: Customizable Material-themed Jekyll with Google's Material Design components for the web.
+button:
+  - title: Github
+    url: /about.html
+  - title: Website
+    url: /index.html

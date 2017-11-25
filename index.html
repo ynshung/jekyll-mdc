@@ -1,0 +1,21 @@
+---
+layout: default
+card: false
+---
+<div class="front-page-card">
+  {% for posts in site.posts %}
+    <div class="mdc-card">
+    {% if posts.img %}<section class="mdc-card__media" style="background-image: url({{ posts.img }}); height:{{ posts.imgheight }};"></section>{% endif %}
+      <section class="mdc-card__primary">
+        <h1 class="mdc-card__title mdc-card__title--large">{{ posts.title }}</h1>
+        <h2 class="mdc-card__subtitle">{{ posts.date | date: "%d %b %Y" }}</h2>
+      </section>
+      <section class="mdc-card__supporting-text">
+        {{ posts.support }}
+      </section>
+      <section class="mdc-card__actions">
+        <a href="{{ posts.url }}"><button class="mdc-button mdc-button--compact mdc-card__action mdc-ripple-surface">Read more</button></a>
+      </section>
+    </div>
+  {% endfor %}
+</div>

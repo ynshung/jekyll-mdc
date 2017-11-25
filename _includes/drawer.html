@@ -1,0 +1,25 @@
+{% if site.data.drawer %}
+<aside class="mdc-{{ site.data.drawer.type }}-drawer">
+    <nav class="mdc-{{ site.data.drawer.type }}-drawer__drawer">
+        <header class="mdc-{{ site.data.drawer.type }}-drawer__header">
+            <div class="mdc-{{ site.data.drawer.type }}-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary">
+                {{ site.data.drawer.title }}
+            </div>
+        </header>
+        <nav class="mdc-{{ site.data.drawer.type }}-drawer__content mdc-list-group">
+            <div class="mdc-list">
+                {% for drawer in site.data.drawer.subpages %}
+                {% if drawer.url %}
+                <a class="mdc-list-item{% if page.url == drawer.url %} mdc-{{ site.data.drawer.type }}-drawer--selected{% endif %}" href="{{ drawer.url }}">
+                    {% if drawer.icon %}
+                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">{{ drawer.icon }}</i>{% endif %}{{ drawer.title }}
+                </a>
+                {% else %}
+                <p class="mdc-list-item pitem">{{ drawer.title }}</p>
+                {% endif %} {% if drawer.break == true %}
+                <hr class="mdc-list-divider"> {% endif %} {% endfor %}
+            </div>
+        </nav>
+    </nav>
+</aside>
+{% endif %}

@@ -1,0 +1,20 @@
+<title>{{ page.title | default: site.title }}</title>
+{% if page.meta %}<meta name="description=" content="{{page.meta}}">{% endif %}
+<meta charset="utf-8"/>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://unpkg.com/material-components-web@0.25.0/dist/material-components-web.min.css">
+<script src="https://unpkg.com/material-components-web@0.25.0/dist/material-components-web.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+
+<link rel="stylesheet" href="{{ site.url }}/assets/css/style.css" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% if site.themecolor %}
+<style>
+    :root {
+        --mdc-theme-primary: {{ site.themecolor }};
+    }
+</style>
+{% endif %}

@@ -1,0 +1,12 @@
+title: jekyll-mdc-drawer
+type: temporary
+# Experimental ^
+subpages:
+  - title: Main Page
+    url: /
+  - title: About
+    url: /about.html
+    icon: account_circle
+  - title: Text
+    break: true
+  - title: A break!

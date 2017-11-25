@@ -1,0 +1,13 @@
+<!doctype html>
+<html{% if site.rtl == true %} dir="rtl"{% endif %}>
+    <head>
+        {% include head.html %}
+    </head>
+
+    <body class="mdc-typography">
+        {% include toolbar.html %}
+        {% include drawer.html %}
+        {% include content.html %}
+        {% include script.html %}
+    </body>
+</html>
