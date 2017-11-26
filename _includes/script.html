@@ -5,6 +5,14 @@
     document.querySelector('.menu-button').addEventListener('click', function() {
         drawer.open = !drawer.open;
     });
+    {% if site.data.drawer.type == "persistent" %}
+    drawerEl.addEventListener('MDCPersistentDrawer:open', function() {
+        $("html").css("overflow", "hidden");
+    });
+    drawerEl.addEventListener('MDCPersistentDrawer:close', function() {
+        $("html").css("overflow", "initial");
+    });
+    {% endif %}
     window.ToolbarTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#toolbar-tab-bar'));
     mdc.ripple.MDCRipple.attachTo(document.querySelector('.mdc-button'));
     window.mdc.autoInit();
