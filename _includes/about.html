@@ -1,0 +1,19 @@
+<div class="mdc-card">
+	<div class="mdc-card__horizontal-block">
+		<section class="mdc-card__primary">
+			<h1 class="mdc-card__title mdc-card__title--large">{{ about.title | default: site.title }}</h1>
+			<h2 class="mdc-card__subtitle">
+				{{ about.sub }}
+			</h2>
+		</section>
+		{% if about.img %}<img class="mdc-card__media-item" src="{{ about.img | relative_url }}">{% endif %}
+	</div>
+	<section class="mdc-card__supporting-text">
+		{{ about.support }}
+	</section>
+	<section class="mdc-card__actions">
+		{% for button in about.button %}
+		<a href="{{ button.url | relative_url }}"><button class="mdc-button mdc-button--compact mdc-card__action">{{ button.title }}</button></a>
+		{% endfor %}
+	 </section>
+</div>
