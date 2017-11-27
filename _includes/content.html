@@ -17,11 +17,11 @@
                     {% endif %}
                 </div>
 
-				<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-8-tablet" id="right-card">
-					{% if about and page.about != false %}
+				{% if about and page.about != false %}
+					<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-8-tablet" id="right-card">
 						{% include about.html %}
-					{% endif %}
-				</div>
+					</div>
+				{% endif %}
             </ul>
         </div>
     </div>
