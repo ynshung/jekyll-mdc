@@ -9,7 +9,7 @@ categories: jekyll
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[https://github.com/pages-themes/minimal/blob/master/index.md](Adapted from page-themes/minimal.)
+[Adapted from page-themes/minimal](https://github.com/pages-themes/minimal/blob/master/index.md).
 
 There should be whitespace between paragraphs.
 
