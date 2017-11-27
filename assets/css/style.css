@@ -8,6 +8,8 @@ body {
 
 a {
     text-decoration: none;
+	color: var(--mdc-theme-primary);
+	font-weight: 500;
 }
 
 img {
@@ -30,9 +32,8 @@ pre {
 .drawer-text {
     padding: 0 16px;
     margin: 0;
-    font-size: .875rem;
+    font-size: .8rem;
     letter-spacing: .04em;
-
 }
 
 .drawer-text * {
