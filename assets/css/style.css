@@ -6,6 +6,10 @@ body {
     font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 img {
     max-width: 100%;
 }
@@ -21,6 +25,18 @@ pre {
 #main-card,
 #right-card {
     width: 100%;
+}
+
+.drawer-text {
+    padding: 0 16px;
+    margin: 0;
+    font-size: .875rem;
+    letter-spacing: .04em;
+
+}
+
+.drawer-text * {
+    margin: 0;
 }
 
 .pitem {

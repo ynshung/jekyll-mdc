@@ -4,13 +4,15 @@ type: temporary
 subpages:
   - title: Main Page
     url: /
+    icon: home
   - title: About
     url: /about.html
     icon: account_circle
   - title: GitHub
     url: https://github.com/nysnatuss/jekyll-mdc
     ext: true
-  - title: Text
+  - title: Text (Clickable)
+    icon: text_fields
     break: true
   - title: A break!
-  - text: Supports text! 
+  - text: Add text which supports [markdown](https://material.io/components/web/)!

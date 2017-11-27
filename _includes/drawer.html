@@ -13,12 +13,19 @@
                         <a class="mdc-list-item{% if page.url == drawer.url %} mdc-{{ site.data.drawer.type }}-drawer--selected{% endif %}"
                         href="{% if drawer.ext == true %}{{ drawer.url }}{% else %}{{ drawer.url | relative_url }}{% endif %}">
                             {% if drawer.icon %}
-                            <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">{{ drawer.icon }}</i>{% endif %}{{ drawer.title }}
+                                <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">{{ drawer.icon }}</i>
+                            {% endif %}
+                            {{ drawer.title }}
                         </a>
                         {% elsif drawer.text %}
-                            {{ drawer.text | markdownify }}
+                            <div class="drawer-text">{{ drawer.text | markdownify }}</div>
                         {% else %}
-                            <p class="mdc-list-item pitem">{{ drawer.title }}</p>
+                            <p class="mdc-list-item pitem">
+                                {% if drawer.icon %}
+                                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">{{ drawer.icon }}</i>
+                                {% endif %}
+                                {{ drawer.title }}
+                            </p>
                     {% endif %}
                     {% if drawer.break == true %}
                         <hr class="mdc-list-divider">
