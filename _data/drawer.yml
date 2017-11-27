@@ -7,6 +7,9 @@ subpages:
   - title: About
     url: /about.html
     icon: account_circle
+  - title: GitHub
+    url: https://github.com/nysnatuss/jekyll-mdc
+    ext: true
   - title: Text
     break: true
   - title: A break!

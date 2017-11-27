@@ -1,10 +1,11 @@
 title: jekyll-mdc-toolbar
 fixed: true
+indicator: true
 # Currently only supports fixed: true
 subpages:
   - title: Main page
     url: /
-  - title: About
-    url: /about.html
-    icon: account_circle
+  - title: GitHub
+    url: https://github.com/nysnatuss/jekyll-mdc
+    ext: true
   - title: Text

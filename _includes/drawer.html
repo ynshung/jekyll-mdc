@@ -3,14 +3,15 @@
     <nav class="mdc-{{ site.data.drawer.type }}-drawer__drawer">
         <header class="mdc-{{ site.data.drawer.type }}-drawer__header">
             <div class="mdc-{{ site.data.drawer.type }}-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary">
-                {{ site.data.drawer.title| default: site.title  }}
+                {{ site.data.drawer.title | default: site.title  }}
             </div>
         </header>
         <nav class="mdc-{{ site.data.drawer.type }}-drawer__content mdc-list-group">
             <div class="mdc-list">
                 {% for drawer in site.data.drawer.subpages %}
                 {% if drawer.url %}
-                <a class="mdc-list-item{% if page.url == drawer.url %} mdc-{{ site.data.drawer.type }}-drawer--selected{% endif %}" href="{{ drawer.url | relative_url }}">
+                <a class="mdc-list-item{% if page.url == drawer.url %} mdc-{{ site.data.drawer.type }}-drawer--selected{% endif %}"
+                href="{% if drawer.ext == true %}{{ drawer.url }}{% else %}{{ drawer.url | relative_url }}{% endif %}">
                     {% if drawer.icon %}
                     <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">{{ drawer.icon }}</i>{% endif %}{{ drawer.title }}
                 </a>

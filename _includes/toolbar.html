@@ -10,8 +10,9 @@
                     <nav id="toolbar-tab-bar" class="mdc-tab-bar">
                         {% for toolbar in site.data.toolbar.subpages %}
                             {% if toolbar.url %}
-                                <a class="mdc-tab{% if page.url == toolbar.url %} mdc-tab--active{% endif %}" href="{{ toolbar.url | relative_url }}">{{ toolbar.title }}</a>
-                                {% if page.url == toolbar.url %}
+                                <a class="mdc-tab{% if page.url == toolbar.url %} mdc-tab--active{% endif %}"
+                                href="{% if toolbar.ext == true %}{{ toolbar.url }}{% else %}{{ toolbar.url | relative_url }}{% endif %}">{{ toolbar.title }}</a>
+                                {% if page.url == toolbar.url and site.data.toolbar.indicator == true %}
                                     <span class="mdc-tab-bar__indicator"></span>
                                 {% endif %}
                                 {% else %}
