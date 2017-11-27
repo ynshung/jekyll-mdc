@@ -9,16 +9,21 @@
         <nav class="mdc-{{ site.data.drawer.type }}-drawer__content mdc-list-group">
             <div class="mdc-list">
                 {% for drawer in site.data.drawer.subpages %}
-                {% if drawer.url %}
-                <a class="mdc-list-item{% if page.url == drawer.url %} mdc-{{ site.data.drawer.type }}-drawer--selected{% endif %}"
-                href="{% if drawer.ext == true %}{{ drawer.url }}{% else %}{{ drawer.url | relative_url }}{% endif %}">
-                    {% if drawer.icon %}
-                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">{{ drawer.icon }}</i>{% endif %}{{ drawer.title }}
-                </a>
-                {% else %}
-                <p class="mdc-list-item pitem">{{ drawer.title }}</p>
-                {% endif %} {% if drawer.break == true %}
-                <hr class="mdc-list-divider"> {% endif %} {% endfor %}
+                    {% if drawer.url %}
+                        <a class="mdc-list-item{% if page.url == drawer.url %} mdc-{{ site.data.drawer.type }}-drawer--selected{% endif %}"
+                        href="{% if drawer.ext == true %}{{ drawer.url }}{% else %}{{ drawer.url | relative_url }}{% endif %}">
+                            {% if drawer.icon %}
+                            <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">{{ drawer.icon }}</i>{% endif %}{{ drawer.title }}
+                        </a>
+                        {% elsif drawer.text %}
+                            {{ drawer.text | markdownify }}
+                        {% else %}
+                            <p class="mdc-list-item pitem">{{ drawer.title }}</p>
+                    {% endif %}
+                    {% if drawer.break == true %}
+                        <hr class="mdc-list-divider">
+                    {% endif %}
+                {% endfor %}
             </div>
         </nav>
     </nav>

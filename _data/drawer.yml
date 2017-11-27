@@ -13,3 +13,4 @@ subpages:
   - title: Text
     break: true
   - title: A break!
+  - text: Supports text! 
