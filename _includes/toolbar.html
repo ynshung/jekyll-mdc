@@ -2,7 +2,7 @@
     <header class="mdc-toolbar{% if site.data.toolbar.fixed == true %} mdc-toolbar--fixed{% endif %}">
         <div class="mdc-toolbar__row">
             <div class="mdc-toolbar__section mdc-toolbar__section--shrink-to-fit mdc-toolbar__section--align-start">
-                {% if site.data.drawer %}<a href="#" class="menu-button material-icons mdc-toolbar__menu-icon">menu</a>{% endif %}
+                {% if site.data.drawer %}<button href="#" class="menu-button material-icons mdc-toolbar__menu-icon">menu</button>{% endif %}
                 <span class="mdc-toolbar__title"><a href="{{ site.url }}{{ site.baseurl }}">{{ site.data.toolbar.title | default: site.title }}</a></span>
             </div>
             <div class="mdc-toolbar__section mdc-toolbar__section--align-end">
