@@ -1,38 +1,38 @@
 {% if site.data.drawer %}
-<aside class="mdc-{{ site.data.drawer.type }}-drawer">
-    <nav class="mdc-{{ site.data.drawer.type }}-drawer__drawer">
-        <header class="mdc-{{ site.data.drawer.type }}-drawer__header">
-            <div class="mdc-{{ site.data.drawer.type }}-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary">
-                {{ site.data.drawer.title | default: site.title  }}
-            </div>
-        </header>
-        <nav class="mdc-{{ site.data.drawer.type }}-drawer__content mdc-list-group">
-            <div class="mdc-list">
-                {% for drawer in site.data.drawer.subpages %}
-                    {% if drawer.url %}
-                        <a class="mdc-list-item{% if page.url == drawer.url %} mdc-{{ site.data.drawer.type }}-drawer--selected{% endif %}"
-                        href="{% if drawer.ext == true %}{{ drawer.url }}{% else %}{{ drawer.url | relative_url }}{% endif %}">
-                            {% if drawer.icon %}
-                                <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">{{ drawer.icon }}</i>
-                            {% endif %}
-                            {{ drawer.title }}
-                        </a>
-                        {% elsif drawer.text %}
-                            <div class="drawer-text">{{ drawer.text | markdownify }}</div>
-                        {% else %}
-                            <p class="mdc-list-item pitem">
-                                {% if drawer.icon %}
-                                    <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">{{ drawer.icon }}</i>
-                                {% endif %}
-                                {{ drawer.title }}
-                            </p>
-                    {% endif %}
-                    {% if drawer.break == true %}
-                        <hr class="mdc-list-divider">
-                    {% endif %}
-                {% endfor %}
-            </div>
+<aside class="mdc-drawer mdc-drawer--modal">
+    <div class="mdc-drawer__header">
+        <h3 class="mdc-drawer__title">{{ site.data.drawer.title | default: site.title }}</h3>
+        <h6 class="mdc-drawer__subtitle">{{ site.data.drawer.subtitle }}</h6>
+    </div>
+    <div class="mdc-drawer__content">
+        <nav class="mdc-list">
+            {% for drawer in site.data.drawer.subpages %}
+                {% if drawer.url %}
+                    <a class="mdc-list-item{% if page.url == drawer.url %} mdc-list-item--activated{% endif %}"
+                    href="{% if drawer.ext == true %}{{ drawer.url }}{% else %}{{ drawer.url | relative_url }}{% endif %}">
+                        {% if drawer.icon %}
+                            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">{{ drawer.icon }}</i>
+                        {% endif %}
+                        {{ drawer.title }}
+                    </a>
+                {% elsif drawer.subheader %}
+                    <h6 class="mdc-list-group__subheader">{{ drawer.subheader }}</h6>
+                {% elsif drawer.text %}
+                    <div class="drawer-text">{{ drawer.text | markdownify }}</div>
+                {% else %}
+                    <p class="mdc-list-item">
+                        {% if drawer.icon %}
+                            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">{{ drawer.icon }}</i>
+                        {% endif %}
+                        {{ drawer.title }}
+                    </p>
+                {% endif %}
+                {% if drawer.break == true %}
+                    <hr class="mdc-list-divider">
+                {% endif %}
+            {% endfor %}
         </nav>
-    </nav>
+    </div>
 </aside>
+<div class="mdc-drawer-scrim"></div>
 {% endif %}

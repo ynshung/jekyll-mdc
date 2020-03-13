@@ -1,10 +1,12 @@
 title: 
 img: /assets/img/jekyll.jpg
-imgsize: 30px
+imgsize: 128px
 sub: Material-themed Jekyll
 support: Customizable Material-themed Jekyll with Google's Material Design components for the web.
 button:
   - title: Github
+    icon: code
+    url: https://github.com/ynshung/jekyll-mdc
+    ext: true
+  - title: About
     url: /about.html
-  - title: Website
-    url: /index.html

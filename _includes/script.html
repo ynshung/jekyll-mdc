@@ -1,19 +1,31 @@
 <script>
-    var drawerEl = document.querySelector('.mdc-{{ site.data.drawer.type }}-drawer');
-    var MDC{{ site.data.drawer.type | capitalize }}Drawer = mdc.drawer.MDC{{ site.data.drawer.type | capitalize }}Drawer;
-    var drawer = new MDC{{ site.data.drawer.type | capitalize }}Drawer(drawerEl);
+    const drawerEl = document.querySelector('.mdc-drawer');
+    const drawer = new mdc.drawer.MDCDrawer.attachTo(drawerEl);
     document.querySelector('.menu-button').addEventListener('click', function() {
         drawer.open = !drawer.open;
     });
-    {% if site.data.drawer.type == "persistent" %}
-    drawerEl.addEventListener('MDCPersistentDrawer:open', function() {
-        $("html").css("overflow", "hidden");
-    });
-    drawerEl.addEventListener('MDCPersistentDrawer:close', function() {
-        $("html").css("overflow", "initial");
-    });
-    {% endif %}
-    window.ToolbarTabBar = new mdc.tabs.MDCTabBar(document.querySelector('#toolbar-tab-bar'));
     mdc.ripple.MDCRipple.attachTo(document.querySelector('.mdc-button'));
-    window.mdc.autoInit();
+    mdc.ripple.MDCRipple.attachTo(document.querySelector('.mdc-ripple-surface'));
+
+    var lastScroll = 0;
+    var topBarHeight = 64;
+
+    window.addEventListener("scroll", function (event) {
+        var currTop = parseInt(document.getElementById("top-bar").style.top);
+        var scrolled = currTop - (this.scrollY - lastScroll);
+
+
+        if (scrolled < -topBarHeight) {
+            scrolled = -topBarHeight;
+        } else if (scrolled > 0) {
+            scrolled = 0;
+        }
+        document.getElementById("top-bar").style.top = scrolled + "px";
+        lastScroll = this.scrollY;
+
+
+        cardtop = parseInt(document.getElementById("inner-card").style.top);
+        document.getElementById("inner-card").style.top = (this.scrollY + scrolled) + "px";
+        console.log(this.scrollY + scrolled)
+    });
 </script>

@@ -1,9 +1,12 @@
 html {
+    background-color: #fefefe;
     height: 100%;
 }
 
 body {
     font-family: Roboto, Helvetica, Arial, sans-serif;
+    color: #454545;
+    margin: 0;
 }
 
 a {
@@ -24,6 +27,53 @@ pre {
     overflow-x: auto;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+}
+
+.mdc-top-app-bar {
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+}
+
+.mdc-top-app-bar__title a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.inner-card {
+    padding: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.mdc-card__supporting-text {
+    padding: 0 16px;
+}
+
+.mdc-card__primary {
+    padding: 1rem;
+    padding-right: 0;
+    margin: auto 0;
+}
+
+.about-img {
+    max-height: 128px;
+    margin: auto;
+    margin-top: 1rem;
+    border-radius: 50%;
+}
+
+.card-title {
+    font-weight: 500;
+    color: #333;
+}
+
+.card-gray {
+    color: rgba(0, 0, 0, 0.5);
+}
+
 #main-card,
 #right-card {
     width: 100%;
@@ -33,37 +83,19 @@ pre {
     padding: 0 16px;
     margin: 0;
     font-size: .8rem;
-    letter-spacing: .04em;
 }
 
 .drawer-text * {
     margin: 0;
 }
 
-.pitem {
-    margin: 0;
-}
-
 #main-class {
-    max-width: 1000px;
-    padding-top: 12px;
+    max-width: 1024px;
+    padding-top: 5rem;
 }
 
 .mdl-layout__content {
     width: 100%;
-}
-
-#toolbar-tab-bar {
-    padding-right: 12px;
-}
-
-[dir="rtl"] #toolbar-tab-bar {
-    padding-left: 12px;
-}
-
-.mdc-toolbar__title a {
-    text-decoration: none;
-    color: #fff;
 }
 
 .mdc-layout-grid__cell {

@@ -1,27 +1,13 @@
-<div class="header">
-    <header class="mdc-toolbar{% if site.data.toolbar.fixed == true %} mdc-toolbar--fixed{% endif %}">
-        <div class="mdc-toolbar__row">
-            <div class="mdc-toolbar__section mdc-toolbar__section--shrink-to-fit mdc-toolbar__section--align-start">
-                {% if site.data.drawer %}<button href="#" class="menu-button material-icons mdc-toolbar__menu-icon">menu</button>{% endif %}
-                <span class="mdc-toolbar__title"><a href="{{ site.url }}{{ site.baseurl }}">{{ site.data.toolbar.title | default: site.title }}</a></span>
-            </div>
-            <div class="mdc-toolbar__section mdc-toolbar__section--align-end">
-                <div>
-                    <nav id="toolbar-tab-bar" class="mdc-tab-bar">
-                        {% for toolbar in site.data.toolbar.subpages %}
-                            {% if toolbar.url %}
-                                <a class="mdc-tab{% if page.url == toolbar.url %} mdc-tab--active{% endif %}"
-                                href="{% if toolbar.ext == true %}{{ toolbar.url }}{% else %}{{ toolbar.url | relative_url }}{% endif %}">{{ toolbar.title }}</a>
-                                {% if page.url == toolbar.url and site.data.toolbar.indicator == true %}
-                                    <span class="mdc-tab-bar__indicator"></span>
-                                {% endif %}
-                                {% else %}
-                                    <p class="mdc-tab">{{ toolbar.title }}</p>
-                            {% endif %}
-                        {% endfor %}
-                    </nav>
-                </div>
-             </div>
-        </div>
-    </header>
-</div>
+<header class="mdc-top-app-bar" id="top-bar" style="top: 0px">
+    <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+            {% if site.data.drawer %}<button class="menu-button mdc-icon-button material-icons mdc-top-app-bar__navigation-icon--unbounded">menu</button>{% endif %}
+            <span class="mdc-top-app-bar__title"><a href="{{ site.url }}{{ site.baseurl }}">{{ site.data.toolbar.title | default: site.title }}</a></span>
+        </section>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+            {% for button in site.data.toolbar.buttons %}
+                <button class="mdc-icon-button material-icons mdc-top-app-bar__action-item--unbounded" aria-label="{{ button.label }}">{{ button.icon }}</button>
+            {% endfor %}
+         </section>
+    </div>
+</header>

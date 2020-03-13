@@ -1,19 +1,23 @@
-<div class="mdc-card">
-	<div class="mdc-card__horizontal-block">
-		<section class="mdc-card__primary">
-			<h1 class="mdc-card__title mdc-card__title--large">{{ about.title | default: site.title }}</h1>
-			<h2 class="mdc-card__subtitle">
-				{{ about.sub }}
-			</h2>
-		</section>
-		{% if about.img %}<img class="mdc-card__media-item" src="{{ about.img | relative_url }}">{% endif %}
-	</div>
-	<section class="mdc-card__supporting-text">
-		{{ about.support }}
+<div class="mdc-card" id="inner-card" style="top: 0">
+	{% if about.img %}
+		<img class="about-img" style="max-width: {{ about.imgsize }}" src="{{ about.img | relative_url }}">
+	{% endif %}
+	<section class="mdc-card__primary">
+		<h2 class="mdc-typography--headline5 no-margin">{{ about.title | default: site.title }}</h2>
+		<h3 class="mdc-typography--body2 card-gray no-margin">{{ about.sub }}</h3>
 	</section>
+	<hr class="mdc-list-divider">
+	<section class="mdc-card__supporting-text" style="margin-top: 1rem">
+		<p class="mdc-typography--body2" style="margin: 0">{{ about.support }}</p>
+	</section>
+
 	<section class="mdc-card__actions">
 		{% for button in about.button %}
-		<a href="{{ button.url | relative_url }}"><button class="mdc-button mdc-button--compact mdc-card__action">{{ button.title }}</button></a>
+		<a href="{% if ext == true %}{{ button.url | relative_url }}{% else %}{{ button.url }}{% endif %}"><button class="mdc-button mdc-button--compact mdc-card__action mdc-ripple-surface">
+        {% if button.icon %}
+            <i class="material-icons mdc-list-item__graphic" style="color:var(--mdc-theme-primary);margin-right: .5rem" aria-hidden="true">{{ button.icon }}</i>
+        {% endif %}
+		{{ button.title }}</button></a>
 		{% endfor %}
 	 </section>
 </div>

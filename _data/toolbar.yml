@@ -1,11 +1,13 @@
-title: jekyll-mdc-toolbar
-fixed: true
-indicator: true
-# Currently only supports fixed: true
-subpages:
-  - title: Main page
+title: jekyll-mdc-top-app-bar
+fixed: false
+buttons:
+  - icon: file_download
+    label: Download
     url: /
-  - title: GitHub
+  - icon: print
+    label: Print this page
     url: https://github.com/ynshung/jekyll-mdc
     ext: true
-  - title: Text
+    url: /
+  - icon: bookmark
+    label: Bookmark this page

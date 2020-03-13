@@ -1,28 +1,24 @@
 <main class="mdl-layout__content">
-    <div {% if site.data.toolbar.fixed == true %}class="mdc-toolbar-fixed-adjust"{% endif %}>
-        <div class="mdc-layout-grid" id="main-class">
-            <div class="mdc-layout-grid__inner">
-                {% assign about = site.data.about %}
-                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-{% if about and page.about != false %}8{% else %}12{% endif %}" id="main-card">
-                    {% if page.card == false or page.layout == "post" %}
-                        {{ content }}
-                        {% else %}
-                        <div class="page-card">
-                            <div class="mdc-card">
-                                <section class="mdc-card__supporting-text">
-                                    {{ content }}
-                                </section>
-                            </div>
-                        </div>
-                    {% endif %}
-                </div>
+    <div class="mdc-layout-grid" id="main-class">
+        <div class="mdc-layout-grid__inner">
+            {% assign about = site.data.about %}
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-{% if about and page.about != false %}9{% else %}12{% endif %}" id="main-card">
+                {% if page.card == false or page.layout == "post" %}
+                    {{ content }}
+                {% else %}
+                    <div class="mdc-card page-card">
+                        <section class="mdc-card__supporting-text">
+                            {{ content }}
+                        </section>
+                    </div>
+                {% endif %}
+            </div>
 
-				{% if about and page.about != false %}
-					<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-8-tablet" id="right-card">
-						{% include about.html %}
-					</div>
-				{% endif %}
-            </ul>
-        </div>
+			{% if about and page.about != false %}
+				<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3" id="right-card">
+					{% include about.html %}
+				</div>
+			{% endif %}
+        </ul>
     </div>
 </main>

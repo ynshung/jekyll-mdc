@@ -1,6 +1,5 @@
 title: jekyll-mdc-drawer
-type: temporary
-# Experimental ^
+subtitle: The drawer!
 subpages:
   - title: Main Page
     url: /
@@ -14,5 +13,6 @@ subpages:
   - title: Text (Clickable)
     icon: text_fields
     break: true
+  - subheader: Subheader
   - title: A break!
   - text: Add text which supports [markdown](https://material.io/components/web/)!

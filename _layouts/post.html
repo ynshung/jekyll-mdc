@@ -3,9 +3,9 @@ layout: default
 ---
 <div class="mdc-card">
 	{% if page.img %}<section class="mdc-card__media" style="background-image:url({{ page.img }});height:{{page.imgheight}}"></section>{% endif %}
-	<section class="mdc-card__primary" style="padding-bottom: 2px">
-		<h1 class="mdc-card__title mdc-card__title--large">{{ page.title }}</h1>
-		<h2 class="mdc-card__subtitle">{{ page.date | date: "%d %b %Y" }}</h2>
+	<section class="mdc-card__primary" style="padding-bottom: 0">
+        <h1 class="mdc-typography--headline5 card-title no-margin">{{ page.title }}</h1>
+          <h2 class="mdc-typography--subtitle2 card-gray no-margin">{{ page.date | date: "%d %b %Y" }}</h2>
 	</section>
 	<section class="mdc-card__supporting-text">
 		{{ content }}

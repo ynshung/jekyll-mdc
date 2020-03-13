@@ -5,17 +5,19 @@ card: false
 <div class="front-page-card">
   {% for posts in site.posts %}
     <div class="mdc-card">
-    {% if posts.img %}<section class="mdc-card__media" style="background-image: url({{ posts.img | relative_url }}); height:{{ posts.imgheight }};"></section>{% endif %}
-      <section class="mdc-card__primary">
-        <h1 class="mdc-card__title mdc-card__title--large">{{ posts.title }}</h1>
-        <h2 class="mdc-card__subtitle">{{ posts.date | date: "%d %b %Y" }}</h2>
-      </section>
-      <section class="mdc-card__supporting-text">
-        {{ posts.support }}
-      </section>
-      <section class="mdc-card__actions">
-        <a href="{{ posts.url | relative_url }}"><button class="mdc-button mdc-button--compact mdc-card__action mdc-ripple-surface">Read more</button></a>
-      </section>
+      {% if posts.img %}<section class="mdc-card__media" style="background-image: url({{ posts.img | relative_url }}); height:{{ posts.imgheight }};"></section>{% endif %}
+      <div class="inner-card">
+        <section class="mdc-card__primary">
+          <h1 class="mdc-typography--headline5 card-title no-margin">{{ posts.title }}</h1>
+          <h2 class="mdc-typography--subtitle2 card-gray no-margin">{{ posts.date | date: "%d %b %Y" }}</h2>
+        </section>
+        <section class="mdc-card__supporting-text">
+          {{ posts.support }}
+        </section>
+        <section class="mdc-card__actions">
+          <a href="{{ posts.url | relative_url }}"><button class="mdc-button mdc-button--compact mdc-card__action mdc-ripple-surface">Read more</button></a>
+        </section>
+      </div>
     </div>
   {% endfor %}
 </div>
