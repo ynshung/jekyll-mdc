@@ -14,7 +14,6 @@
         var currTop = parseInt(document.getElementById("top-bar").style.top);
         var scrolled = currTop - (this.scrollY - lastScroll);
 
-
         if (scrolled < -topBarHeight) {
             scrolled = -topBarHeight;
         } else if (scrolled > 0) {
@@ -23,9 +22,12 @@
         document.getElementById("top-bar").style.top = scrolled + "px";
         lastScroll = this.scrollY;
 
-
-        cardtop = parseInt(document.getElementById("inner-card").style.top);
-        document.getElementById("inner-card").style.top = (this.scrollY + scrolled) + "px";
-        console.log(this.scrollY + scrolled)
+        if (window.innerWidth >= 840) {
+            cardtop = parseInt(document.getElementById("inner-card").style.top);
+            document.getElementById("inner-card").style.top = (this.scrollY + scrolled) + "px";
+            console.log(this.scrollY + scrolled)
+        } else {
+            document.getElementById("inner-card").style.top = "0px";
+        }
     });
 </script>
