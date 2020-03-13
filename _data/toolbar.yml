@@ -6,6 +6,6 @@ subpages:
   - title: Main page
     url: /
   - title: GitHub
-    url: https://github.com/nysnatuss/jekyll-mdc
+    url: https://github.com/ynshung/jekyll-mdc
     ext: true
   - title: Text

@@ -9,7 +9,7 @@ subpages:
     url: /about.html
     icon: account_circle
   - title: GitHub
-    url: https://github.com/nysnatuss/jekyll-mdc
+    url: https://github.com/ynshung/jekyll-mdc
     ext: true
   - title: Text (Clickable)
     icon: text_fields
