@@ -1,11 +1,16 @@
 <script>
-    const drawerEl = document.querySelector('.mdc-drawer');
-    const drawer = new mdc.drawer.MDCDrawer.attachTo(drawerEl);
-    document.querySelector('.menu-button').addEventListener('click', function() {
-        drawer.open = !drawer.open;
-    });
-    mdc.ripple.MDCRipple.attachTo(document.querySelector('.mdc-button'));
-    mdc.ripple.MDCRipple.attachTo(document.querySelector('.mdc-ripple-surface'));
+    {% if data.drawer %}
+        const drawerEl = document.querySelector('.mdc-drawer');
+        const drawer = new mdc.drawer.MDCDrawer.attachTo(drawerEl);
+        document.querySelector('.menu-button').addEventListener('click', function() {
+            drawer.open = !drawer.open;
+        });
+    {% endif %}
+
+    element = document.querySelectorAll('.mdc-ripple-surface');
+    for (x=0; x<element.length; x++) {
+        mdc.ripple.MDCRipple.attachTo(element[x]);
+    }
 
     var lastScroll = 0;
     var topBarHeight = 64;
@@ -25,7 +30,6 @@
         if (window.innerWidth >= 840) {
             cardtop = parseInt(document.getElementById("inner-card").style.top);
             document.getElementById("inner-card").style.top = (this.scrollY + scrolled) + "px";
-            console.log(this.scrollY + scrolled)
         } else {
             document.getElementById("inner-card").style.top = "0px";
         }

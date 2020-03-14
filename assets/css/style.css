@@ -48,13 +48,17 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-.mdc-card__supporting-text {
-    padding: 0 16px;
+.mdc_card {
+    margin-bottom: 1.25rem;
 }
 
 .mdc-card__primary {
     padding: 1rem;
     margin: auto 0;
+}
+
+.mdc-card__supporting-text {
+    padding: 0 16px;
 }
 
 .about-img {
