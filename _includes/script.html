@@ -1,11 +1,9 @@
 <script>
-    {% if data.drawer %}
-        const drawerEl = document.querySelector('.mdc-drawer');
-        const drawer = new mdc.drawer.MDCDrawer.attachTo(drawerEl);
-        document.querySelector('.menu-button').addEventListener('click', function() {
-            drawer.open = !drawer.open;
-        });
-    {% endif %}
+    const drawerEl = document.querySelector('.mdc-drawer');
+    const drawer = new mdc.drawer.MDCDrawer.attachTo(drawerEl);
+    document.querySelector('.menu-button').addEventListener('click', function() {
+        drawer.open = !drawer.open;
+    });
 
     element = document.querySelectorAll('.mdc-ripple-surface');
     for (x=0; x<element.length; x++) {
