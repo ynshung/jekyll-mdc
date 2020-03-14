@@ -2,7 +2,7 @@
 layout: post
 title: Hello Jekyll!
 support: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce turpis nunc, auctor in hendrerit at, convallis at metus. Aliquam eget luctus diam. Nam ut feugiat neque. Maecenas dolor tellus, viverra non urna ac, cursus gravida diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc pretium nibh sit amet metus blandit, id dapibus ligula condimentum. Fusce tortor nisi, lacinia et egestas ac, volutpat vel orci.
-img: /assets/img/bench.jpg
+img: /jekyll-mdc/assets/img/bench.jpg
 imgheight: 256px
 categories: jekyll
 ---
